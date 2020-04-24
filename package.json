@@ -2,7 +2,7 @@
   "name": "jellyfin-web",
   "version": "0.0.0",
   "description": "Web interface for Jellyfin",
-  "repository": "https://github.com/jellyfin/jellyfin-web",
+  "repository": "https://github.com/frankyifei/jellyfin-web",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
     "@babel/core": "^7.8.6",

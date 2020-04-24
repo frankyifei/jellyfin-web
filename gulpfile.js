@@ -47,7 +47,7 @@ const options = {
         query: ['src/**/*.png', 'src/**/*.jpg', 'src/**/*.gif', 'src/**/*.svg']
     },
     copy: {
-        query: ['src/**/*.json', 'src/**/*.ico']
+        query: ['src/**/*.json', 'src/**/*.ico','src/**/*.woff2']
     },
     injectBundle: {
         query: 'src/index.html'
