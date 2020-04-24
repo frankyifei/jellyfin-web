@@ -1053,12 +1053,14 @@ define(['browser', 'require', 'events', 'apphost', 'loading', 'dom', 'playbackMa
         function renderSsaAss(videoElement, track, item) {
             var attachments = self._currentPlayOptions.mediaSource.MediaAttachments || [];
             var apiClient = connectionManager.getApiClient(item);
+			var attachmentfonts = attachments.map(function (i) {
+                    return apiClient.getUrl(i.DeliveryUrl);
+                });
+			var customFont = [appRouter.baseUrl() + "/libraries/NotoSerifCJKtc-Medium.woff2", appRouter.baseUrl() + "/libraries/NotoSerifCJKsc-Medium.woff2", appRouter.baseUrl() + "/libraries/NotoSerifCJKjp-Medium.woff2"];
             var options = {
                 video: videoElement,
                 subUrl: getTextTrackUrl(track, item),
-                fonts: attachments.map(function (i) {
-                    return apiClient.getUrl(i.DeliveryUrl);
-                }),
+                fonts: attachmentfonts.concat(customFont),
                 workerUrl: appRouter.baseUrl() + "/libraries/subtitles-octopus-worker.js",
                 legacyWorkerUrl: appRouter.baseUrl() + "/libraries/subtitles-octopus-worker-legacy.js",
                 onError: function() {
